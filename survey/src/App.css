@@ -1,0 +1,18 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.content-container {
+  margin-left: 330px; 
+  padding: 20px;
+  min-height: 500px; 
+  overflow-y: auto; 
+  flex-grow: 3; 
+  background-color: rgb(186, 208, 237);
+  color: rgb(5, 94, 158);
+  transition: margin-left 0.3s ease;
+}
+.navbar.collapsed ~ .content-container {
+  margin-left: 60px;
+}

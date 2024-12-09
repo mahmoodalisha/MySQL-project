@@ -1,0 +1,151 @@
+
+.button-container {
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+button {
+  padding: 8px 20px;  
+  font-size: 14px;  
+  cursor: pointer;
+  background-color: transparent; 
+  border: 0.8px solid #ddd;  
+  border-radius: 25px;  
+  font-weight: 250;  
+  transition: all 0.3s ease;
+  margin: 5px 8px;  
+  color: rgb(7, 91, 50);
+}
+
+button.active {
+  background-color: white;
+  border: 0.8px solid #ddd; 
+  color: black;
+}
+
+button:focus {
+  outline: none;  
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);  
+}
+
+button:active {
+  transform: scale(0.98);  
+}
+button .moon-icon {
+  width: 13px;
+  height: 13px;
+  margin-right: 8px; 
+}
+button .moon-icon, 
+button .inactive-icon {
+  width: 11px;
+  height: 11px;
+  margin-right: 8px; 
+}
+
+.questions {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  max-height: 300px;
+  overflow-y: auto;
+  transition: all 0.5s ease;
+  
+  margin-left: 30px;
+}
+
+.question-container {
+  margin-bottom: 20px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.option-button {
+  padding: 8px 19px;
+  margin: 0 5px;
+  background-color: transparent;
+  border: 1.5px solid #bbbbbb66;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #888888cc;
+
+
+}
+
+.option-button:hover {
+  background: linear-gradient(to bottom right, rgba(0, 100, 140, 0.914), rgba(9, 175, 180, 0.914));;
+  color: white;
+  transition: background-color 0.3s ease;
+} 
+
+.option-button.selected {
+  background: linear-gradient(to bottom right, rgba(0, 100, 140, 0.914), rgba(9, 175, 180, 0.914));
+  color: white;
+}
+
+
+.carousel-buttons {
+  position: relative;
+  width: 100%;
+  top: -200px;
+  z-index: 1000;
+}
+
+.prev-button,
+.next-button {
+  position: absolute;
+  padding: 12px;
+  background-color: rgba(240, 240, 240, 0.7);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  top: 50%;
+}
+
+.prev-button {
+  left: -5px; 
+}
+
+.next-button {
+  right: -25px; 
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: rgba(0, 123, 255, 0.7);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.prev-button svg,
+.next-button svg {
+  font-size: 24px;
+  color: #007BFF;
+}
+
+h2 {
+  margin-left: 35px;
+  font-size: 30px;
+}
+
+.questions .question-container p {
+  color: black;
+  font-weight: 450;
+}
+
+.result-message {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
