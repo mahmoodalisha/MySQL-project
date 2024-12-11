@@ -35,14 +35,20 @@ const AdvanceAI = () => {
   }, []);
 
   const handleButtonClick = (subtopic) => {
+    const topic = topicsData.find((topic) => topic.topic_name === activeTopic);
+    const tabIndex = Object.values(topic.subtopics).findIndex(
+      (st) => st.subtopic_name === subtopic
+    );
+  
     setActiveSubtopic(subtopic);
-    const tabIndex = Object.values(topicsData.find(topic => topic.topic_name === activeTopic).subtopics).findIndex(st => st.subtopic_name === subtopic);
     setTabIndex(tabIndex);
-
+  
+    // Sync Swiper slide
     if (swiperRef.current) {
-      swiperRef.current.slideTo(tabIndex);
+      swiperRef.current.slideToLoop(tabIndex); // Use slideToLoop for loop mode
     }
   };
+  
 
   const handleOptionClick = (questionId, optionId) => {
     setSelectedOptions((prev) => ({
@@ -281,12 +287,14 @@ useEffect(() => {
           }}
           onSlideChange={(swiper) => {
             const realIndex = swiper.realIndex;
-            const currentSubtopic = Object.values(topicsData.find(topic => topic.topic_name === activeTopic).subtopics)[realIndex];
+            const topic = topicsData.find((topic) => topic.topic_name === activeTopic);
+            const currentSubtopic = Object.values(topic.subtopics)[realIndex];
             if (currentSubtopic) {
               setTabIndex(realIndex);
               setActiveSubtopic(currentSubtopic.subtopic_name);
             }
           }}
+          
           modules={[Navigation]}
           className="swiper-container"
           initialSlide={tabIndex}
